@@ -1,0 +1,17 @@
+  <div class="card" style="width: 18rem;" 
+    *ngIf="product.price < priceMaxInput || priceMaxInput == null">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text">price: {{product.price}} </p>
+      <p class="card-text">price: {{product.quantity}}> </p>
+
+      <a [routerLink]="['detail', product.id]">detail</a>
+     
+      <button
+       class="btn btn-primary" 
+       (click)="sendNotif()"> 
+       Like --{{product.like}}
+       </button>
+    </div>
+  </div>

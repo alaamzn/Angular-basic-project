@@ -1,0 +1,11 @@
+.app-title{
+      margin-bottom: 30px;
+      background-color: burlywood;
+      padding: 15px;
+      text-align: center;
+}
+
+.navbar{
+      position: sticky;
+      top: 0;
+}

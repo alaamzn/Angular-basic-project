@@ -1,0 +1,39 @@
+<h1>{{ componentTitle }}</h1>
+<button (click)="showStats()">Show stats in home (products)</button>
+{{productsStatNum}}
+<form>
+  <div class="form-group">
+    <input 
+    name="priceMax" 
+    type="number" 
+    [(ngModel)]="priceMax" 
+    class="form-control">
+  </div>
+</form>
+<br>
+
+
+
+<button class="btn btn-warning" (click)="showForm()"> add new Product</button>
+<br>
+<br>
+
+<app-product-form (eventSaveProduct) = "pushProduct($event)" *ngIf="!hideForm">
+  
+</app-product-form>
+
+
+
+<div class="row">
+<app-product class="col-lg-4"
+*ngFor="let product of productsList" 
+[product]="product" 
+(notification)="incrementLike($event)"
+[priceMaxInput]="priceMax">
+   
+</app-product>
+
+
+
+
+</div>
